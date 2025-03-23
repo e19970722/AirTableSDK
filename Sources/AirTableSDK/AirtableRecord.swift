@@ -14,7 +14,12 @@ public struct AirtableRecord: Codable {
     public let fields: [String: String]
 }
 
-public enum AirtableError: Error {
+public enum AirtableError: Error, Equatable {
     case invalidURL
+    case unauthorized
+    case badServerResponse
     case noData
+    case decodingError
+    case timeout
+    case unknown
 }
